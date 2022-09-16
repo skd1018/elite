@@ -1,0 +1,33 @@
+// BOOTSTRAP CONFIG 
+// Use this sass file to edit the theme's Bootstrap installation. 
+// Run SASS MAIN.SCSS Main.CSS from terminal to compile. Make sure you are in CSS folder or compile won't work. 
+////////////////////////////////////////////////////////////////
+$theme-colors: ("yellow":#feae1f, "orange":#fe741f, "blue": #305586, "grey": #F9F9F9, "cta":#dc3545); //add theme colors here
+$font-family-sans-serif: -apple-system, // modify global fonts here
+BlinkMacSystemFont,
+"raleway",
+Arial,
+"Noto Sans",
+"Liberation Sans",
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol",
+"Noto Color Emoji" !default;
+$font-family-monospace: SFMono-Regular,
+Menlo,
+Monaco,
+Consolas,
+"Liberation Mono",
+"Courier New",
+monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+$enable-negative-margins: true; // enable negative margins by default
+$link-color: #071b36;
+$btn-border-radius: none;
+$btn-border-radius-sm: none;
+$btn-border-radius-lg: none;
+$carousel-caption-width: 70%;
+$carousel-caption-padding-y: 1.25rem;
+$carousel-caption-spacer: 1.25rem;
+@import "../css/bootstrap/scss/bootstrap";
