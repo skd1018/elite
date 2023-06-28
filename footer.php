@@ -10,18 +10,24 @@
  * @package ADMHouseTheme
  */
 ?>
-<footer id="colophon">
+</main><!-- #main -->
 </div> <!-- Top Margin Div for Sticky Header, See header.php for start -->
-	<div class="container-fluid bg-blue pb-4">
-		<div class="container">
-			<div class="row pt-5 pb-5">
-				<section class="text-center my-auto col-12 col-sm-4  footernav">
-					<ul>
-						<li><?php the_custom_logo(); ?></li>
 
+<footer id="colophon">
+
+	<div class="container-fluid bg-secondary pt-5 pb-4">
+		<div class="container">
+			<div class="row pb-5">
+				<section class="text-center my-auto col-12 col-sm-4  text-white fw-bold footernav">
+					<ul>
+							<li><?php the_custom_logo(); ?></li>
+							<h2 class="text-cta fw-bold">Footer</h2>
+							<li></li>
+							<li></li>
 					</ul>
 				</section>
 				<section class="col-12 col-sm-4 text-center my-auto footernav fbs">
+					<h2 class="text-cta fw-bold"> </h2>
 					<?php
 					wp_nav_menu(
 						array(
@@ -32,11 +38,20 @@
 					?>
 				</section>
 				<section class="col-12 text-center footernav my-auto col-sm-4">
+					<h2 class="text-cta fw-bold"></h2>
 					<ul class="text-white">
-						<li>Hours</li>
-						<li> M-F 8AM-5PM</li>
-						<li>888-888-8888</li>
-						<li class="mt-4"><img src="/wp-content/uploads/2022/07/f_logo_RGB-White_58-e1657745012646.png"></li>
+						<li>
+							<br>
+							
+						</li>
+						<li class="text-cta fw-bold"></li>
+						<li> </li>
+						<li>
+							<br>
+							
+						</li>
+
+						
 					</ul>
 				</section>
 			</div>

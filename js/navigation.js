@@ -8,26 +8,71 @@
 const popupMenu = "#mobile";
 const popupEl = document.querySelector(popupMenu);
 const menuButton = document.querySelector("#trigger");
+const page = document.querySelector("#primary");
 
+// Dynamically add menu closeout button
+var mobileMenu = document.getElementById('mobile');
+const closeButton = document.createElement('button');
+mobileMenu.append(closeButton);
+closeButton.textContent = '\uF659';
+closeButton.classList.add('toggle');
+closeButton.setAttribute("id", "collapse");
+const menuCollapse = document.getElementById("collapse");
+// handle nav collapse button
+menuCollapse.addEventListener('click', function() {
+    mobileMenu.classList.remove('open');
+    page.classList.remove('slidemargin');
+});
 // Hide nav on outside click
 // Toggle slide menu on icon click
 menuButton.addEventListener("click", () => {
     setTimeout(() => {
         if (!popupEl.classList.contains("open")) {
             popupEl.classList.add("open");
+            page.classList.add('slidemargin');
         }
     }, 20);
 });
+// Submenu handler
+function mobileNav() {
+    const subMenu = document.querySelectorAll('.mobile-navigation .sub-menu');
+    subMenu.forEach(subMenu => {
+        subMenu.setAttribute('id', 'sub')
+    });
 
+    // Add dropdown toggle that displays child menu items.
+    const subMenus = document.querySelectorAll(' .mobile-navigation .menu-item-has-children > a');
+    subMenus.forEach(subMenus => {
+        const button = document.createElement('button');
+        subMenus.after(button);
+        button.textContent = '\uF282';
+        button.classList.add('dropDown');
+        button.setAttribute('id', 'slide');
+
+    });
+    //* slidetoggle function 
+    var slideBtn = document.querySelectorAll('.dropDown');
+    slideBtn.forEach(slideBtn => {
+        slideBtn.addEventListener('click', event => {
+            var menu = slideBtn.nextElementSibling;
+            menu.classList.toggle("active");
+        })
+    });
+
+}
+mobileNav();
+
+
+var theMenu = document.getElementById('sub');
 document.addEventListener("click", (e) => {
     const isClosest = e.target.closest(popupMenu);
     // If `isClosest` equals falsy & popup has the class `show`
     // then hide the menu
     if (!isClosest && popupEl.classList.contains("open")) {
         popupEl.classList.remove("open");
+        page.classList.remove('slidemargin');
     }
 });
-
 
 (function() {
     const siteNavigation = document.getElementById('h');
@@ -125,3 +170,40 @@ document.addEventListener("click", (e) => {
 
 
 }());
+
+
+function topBar() {
+    var doc = document.documentElement;
+    var w = window;
+    var curScroll = prevScroll = w.scrollY || doc.scrollTop;
+    var curDirection = prevDirection = 0;
+    var theHeader = document.getElementById('masthead');
+
+
+    var checkScroll = function() {
+        curScroll = w.scrollY || doc.scrollTop;
+        if (curScroll > prevScroll) {
+            curDirection = 2;
+        } else {
+            curDirection = 1;
+        }
+
+        if (curDirection !== prevDirection) {
+            toggleHeader();
+        }
+        prevDirection = curDirection;
+        prevScroll = curScroll;
+    };
+
+    var toggleHeader = function() {
+        if (curDirection === 2) {
+            theHeader.classList.add('hideit');
+        } else if (curDirection === 1) {
+            theHeader.classList.remove('hideit');
+        }
+    };
+
+    window.addEventListener('scroll', checkScroll);
+}
+
+topBar();

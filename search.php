@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying search results pages
  *
@@ -10,44 +11,35 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title">
+<main id="primary" class="site-main">
+	<div class="pt-5 " style="background-image: url('/wp-content/uploads/2023/06/elite-background-1.webp');">
+		<div class="container">
+			<div class="mt-3 text-center text-white row">
+				<h1 class="page-title py-5">
 					<?php
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'admhousetheme' ), '<span>' . get_search_query() . '</span>' );
+					printf(esc_html__('Search Results for: %s', 'admhousetheme'), '<span>' . get_search_query() . '</span>');
 					?>
 				</h1>
-			</header><!-- .page-header -->
+			</div>
+		</div>
+	</div>
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
+	<?php if (have_posts()) : ?>
+		<div class="container">
+		<?php
+		/* Start the Loop */
+		while (have_posts()) :
+			the_post();
+			get_template_part('template-parts/content', 'search');
+		endwhile;
+		the_posts_navigation();
+	else :
+		get_template_part('template-parts/content', 'none');
+	endif;
 		?>
-
-	</main><!-- #main -->
-
+		</div>
+</main><!-- #main -->
 <?php
-get_sidebar();
+
 get_footer();

@@ -2,12 +2,10 @@
 // Use this sass file to edit the theme's Bootstrap installation. 
 // Run SASS MAIN.SCSS Main.CSS from terminal to compile. Make sure you are in CSS folder or compile won't work. 
 ////////////////////////////////////////////////////////////////
-$theme-colors: ("yellow":#feae1f, "orange":#fe741f, "blue": #305586, "grey": #F9F9F9, "cta":#dc3545); //add theme colors here
+$theme-colors: ("primary": #0A4C87, "secondary": #063660, "cta":#F1C40F, "grey":#F2F4F7, "white":#ffffff, ); //add theme colors here
 $font-family-sans-serif: -apple-system, // modify global fonts here
 BlinkMacSystemFont,
-"raleway",
-Arial,
-"Noto Sans",
+"Red Hat Display",
 "Liberation Sans",
 sans-serif,
 "Apple Color Emoji",
@@ -24,10 +22,12 @@ monospace !default;
 $font-family-base: $font-family-sans-serif !default;
 $enable-negative-margins: true; // enable negative margins by default
 $link-color: #071b36;
-$btn-border-radius: none;
-$btn-border-radius-sm: none;
-$btn-border-radius-lg: none;
+$btn-border-radius: 0px;
+$btn-border-radius-sm: 0px;
+$btn-border-radius-lg: 0px;
 $carousel-caption-width: 70%;
 $carousel-caption-padding-y: 1.25rem;
 $carousel-caption-spacer: 1.25rem;
+$border-radius-lg: 0px;
+$container-max-widths: ( sm: 540px, md: 720px, lg: 960px, xl: 1050px, xxl: 1140px);
 @import "../css/bootstrap/scss/bootstrap";
